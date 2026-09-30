@@ -1,0 +1,33 @@
+mode = "dark"
+
+# Starship Night: near-black night sky, deep launch-pad navy and the
+# orange engine glow, sampled from the dusk, night and pre-dawn frames.
+accent = "#F0883A"
+selection = "#243152"
+muted = "#4D5673"
+
+background = "#101219"
+dark_background = "#0B0C12"
+darker_background = "#07080C"
+lighter_background = "#1A1E2B"
+
+foreground = "#DCD8E0"
+dark_foreground = "#6F7389"
+light_foreground = "#B2AEBE"
+bright_foreground = "#F4F0F6"
+
+red = "#D8655A"
+yellow = "#F2B46E"
+orange = "#F0883A"
+green = "#8FB28A"
+cyan = "#6FA6C2"
+blue = "#5E7FC4"
+magenta = "#B084B8"
+brown = "#8A4E36"
+
+bright_red = "#EC7F74"
+bright_yellow = "#F7C88C"
+bright_green = "#A8C7A2"
+bright_cyan = "#8ABDD6"
+bright_blue = "#7C99D6"
+bright_magenta = "#C69ECC"

@@ -1,0 +1,33 @@
+mode = "dark"
+
+# Starship Golden: warm smoke-brown shadows, amber sunlight on the plume
+# and dusty sky blue, sampled from the sunrise, afternoon and sunset frames.
+accent = "#E89A55"
+selection = "#4A3A32"
+muted = "#7D6A60"
+
+background = "#1E1917"
+dark_background = "#171311"
+darker_background = "#100D0C"
+lighter_background = "#2C2522"
+
+foreground = "#EEDFCF"
+dark_foreground = "#8F7C70"
+light_foreground = "#CDBBA8"
+bright_foreground = "#FAF0E4"
+
+red = "#D96A5A"
+yellow = "#E3B96A"
+orange = "#E89A55"
+green = "#A3B27A"
+cyan = "#7FA9C4"
+blue = "#6E93C2"
+magenta = "#C98A9E"
+brown = "#8C6448"
+
+bright_red = "#EB8374"
+bright_yellow = "#F0CC86"
+bright_green = "#B8C792"
+bright_cyan = "#9AC0D8"
+bright_blue = "#8AADD6"
+bright_magenta = "#DCA3B5"
