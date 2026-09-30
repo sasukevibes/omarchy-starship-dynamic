@@ -1,0 +1,33 @@
+mode = "light"
+
+# Starship Day: cloud-white surfaces, clear sky blue, steel-grey hull
+# and a hint of engine flame, sampled from the 09:00 and 12:00 frames.
+accent = "#3F86D4"
+selection = "#CFE0F3"
+muted = "#98A4B5"
+
+background = "#F3F5F8"
+dark_background = "#E6EAF0"
+darker_background = "#D9DFE7"
+lighter_background = "#DDE4EE"
+
+foreground = "#2B3442"
+dark_foreground = "#8791A0"
+light_foreground = "#46505F"
+bright_foreground = "#1A212C"
+
+red = "#C2413B"
+yellow = "#B7851F"
+orange = "#D0702A"
+green = "#4E8A4A"
+cyan = "#2B8A9A"
+blue = "#3F86D4"
+magenta = "#9A5BB0"
+brown = "#8A6A4E"
+
+bright_red = "#D55650"
+bright_yellow = "#C99A34"
+bright_green = "#62A05D"
+bright_cyan = "#3B9FB0"
+bright_blue = "#5A9BE0"
+bright_magenta = "#AE72C3"
