@@ -1,0 +1,18 @@
+[Unit]
+Description=Starship dynamic wallpaper change times
+
+[Timer]
+OnCalendar=*-*-* 05:00:00
+OnCalendar=*-*-* 06:30:00
+OnCalendar=*-*-* 09:00:00
+OnCalendar=*-*-* 12:00:00
+OnCalendar=*-*-* 15:00:00
+OnCalendar=*-*-* 17:30:00
+OnCalendar=*-*-* 19:30:00
+OnCalendar=*-*-* 22:00:00
+# Catch up on a change missed while powered off. A change missed during
+# suspend runs on resume. The timer never wakes the machine.
+Persistent=true
+
+[Install]
+WantedBy=timers.target

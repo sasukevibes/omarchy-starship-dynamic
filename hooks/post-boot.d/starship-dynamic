@@ -1,0 +1,3 @@
+#!/bin/bash
+# Catch up to the current time once the desktop is running.
+"$HOME/.local/bin/starship-dynamic"

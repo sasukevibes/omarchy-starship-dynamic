@@ -1,0 +1,55 @@
+#!/bin/bash
+# Keeps the Starship themes in step with the time of day. Only acts while a
+# starship-* theme is active, so switching to any other theme pauses the
+# schedule until a Starship theme is picked again.
+#
+#   starship-dynamic                  apply the theme and frame for the current time
+#   starship-dynamic preview <stage>  show one stage now (predawn, sunrise, morning,
+#                                     noon, afternoon, sunset, dusk, night)
+#
+# Run by starship-dynamic.timer at each change time, at login, and after a
+# Starship theme is picked in the theme switcher.
+
+STATE="$HOME/.local/state/omarchy/current"
+
+apply() {
+  local theme=$1 frame=$2
+
+  if [[ $(cat "$STATE/theme.name" 2>/dev/null) != "starship-$theme" ]]; then
+    STARSHIP_DYNAMIC_RUNNING=1 omarchy-theme-set "starship-$theme"
+  fi
+
+  if [[ $(basename "$(readlink "$STATE/background")") != "$frame" ]]; then
+    omarchy-theme-bg-set "$STATE/theme/backgrounds/$frame"
+  fi
+}
+
+if [[ $1 == preview ]]; then
+  case $2 in
+    predawn)   apply night  3-0500-predawn.jpg ;;
+    sunrise)   apply golden 1-0630-sunrise.jpg ;;
+    morning)   apply day    1-0900-morning.jpg ;;
+    noon)      apply day    2-1200-noon.jpg ;;
+    afternoon) apply golden 2-1500-afternoon.jpg ;;
+    sunset)    apply golden 3-1730-sunset.jpg ;;
+    dusk)      apply night  1-1930-dusk.jpg ;;
+    night)     apply night  2-2200-night.jpg ;;
+    *) echo "Usage: starship-dynamic preview predawn|sunrise|morning|noon|afternoon|sunset|dusk|night" >&2; exit 1 ;;
+  esac
+  exit
+fi
+
+[[ $(cat "$STATE/theme.name" 2>/dev/null) == starship-* ]] || exit 0
+
+# Change times must match OnCalendar= in starship-dynamic.timer.
+now=$((10#$(date +%H%M)))
+if   (( now <  500 )); then apply night  2-2200-night.jpg
+elif (( now <  630 )); then apply night  3-0500-predawn.jpg
+elif (( now <  900 )); then apply golden 1-0630-sunrise.jpg
+elif (( now < 1200 )); then apply day    1-0900-morning.jpg
+elif (( now < 1500 )); then apply day    2-1200-noon.jpg
+elif (( now < 1730 )); then apply golden 2-1500-afternoon.jpg
+elif (( now < 1930 )); then apply golden 3-1730-sunset.jpg
+elif (( now < 2200 )); then apply night  1-1930-dusk.jpg
+else                        apply night  2-2200-night.jpg
+fi

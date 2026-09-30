@@ -1,0 +1,5 @@
+#!/bin/bash
+# Picking any Starship theme jumps to the one that matches the time of day.
+# Skipped when starship-dynamic itself set the theme.
+[[ $1 == starship-* && -z $STARSHIP_DYNAMIC_RUNNING ]] || exit 0
+setsid -f "$HOME/.local/bin/starship-dynamic" >/dev/null 2>&1

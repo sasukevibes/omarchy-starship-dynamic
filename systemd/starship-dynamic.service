@@ -1,0 +1,7 @@
+[Unit]
+Description=Match the Starship theme and wallpaper to the time of day
+
+[Service]
+Type=oneshot
+Environment=PATH=%h/.local/bin:/usr/share/omarchy/bin:/usr/local/bin:/usr/bin
+ExecStart=%h/.local/bin/starship-dynamic
